@@ -1,0 +1,2265 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Develidağ Spider &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'develi_spider';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Develidağ Harker" href="ana_iz_element.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="My sample book - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Giriş
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="plots.html">Plots</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="Develida%C4%9F.html">Develidağ</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ana_iz_element.html">Develidağ Harker</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Develidağ Spider</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fdeveli_spider.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/develi_spider.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Develidağ Spider</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="develidag-spider">
+<h1>Develidağ Spider<a class="headerlink" href="#develidag-spider" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dataset_raw</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;../spiderman.xlsx&quot;</span><span class="p">)</span>
+<span class="n">dataset_raw</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Elements&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">dataset_raw</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+<span class="n">dataset_raw</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Elements</th>
+      <th>D2004-1</th>
+      <th>D2004-3</th>
+      <th>D2004-4</th>
+      <th>D2004-5</th>
+      <th>D2004-7</th>
+      <th>D2004-8</th>
+      <th>D2004-10</th>
+      <th>D2004-11</th>
+      <th>D2004-12</th>
+      <th>D2004-13</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Li</td>
+      <td>6.981905</td>
+      <td>7.604960</td>
+      <td>13.166420</td>
+      <td>12.476075</td>
+      <td>6.239455</td>
+      <td>8.945040</td>
+      <td>8.785485</td>
+      <td>7.997385</td>
+      <td>7.522640</td>
+      <td>9.126875</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Be</td>
+      <td>1.802075</td>
+      <td>1.656020</td>
+      <td>1.056855</td>
+      <td>1.359370</td>
+      <td>1.147730</td>
+      <td>1.028400</td>
+      <td>1.429520</td>
+      <td>1.365365</td>
+      <td>0.963280</td>
+      <td>1.257230</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>B</td>
+      <td>2.431930</td>
+      <td>4.098075</td>
+      <td>9.913155</td>
+      <td>13.500850</td>
+      <td>6.332455</td>
+      <td>6.489980</td>
+      <td>3.115865</td>
+      <td>1.776130</td>
+      <td>9.873985</td>
+      <td>14.658575</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Sc</td>
+      <td>25.002060</td>
+      <td>24.450350</td>
+      <td>15.382670</td>
+      <td>17.962315</td>
+      <td>20.299850</td>
+      <td>20.529390</td>
+      <td>26.499220</td>
+      <td>25.565280</td>
+      <td>20.566065</td>
+      <td>11.783625</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>V</td>
+      <td>179.875270</td>
+      <td>166.235005</td>
+      <td>153.705135</td>
+      <td>147.143180</td>
+      <td>162.317765</td>
+      <td>185.778195</td>
+      <td>186.700605</td>
+      <td>178.025530</td>
+      <td>202.527550</td>
+      <td>109.894250</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Cr</td>
+      <td>70.898830</td>
+      <td>67.648045</td>
+      <td>6.042435</td>
+      <td>90.717425</td>
+      <td>60.755680</td>
+      <td>25.287195</td>
+      <td>129.698135</td>
+      <td>126.063300</td>
+      <td>22.644440</td>
+      <td>19.506390</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Co</td>
+      <td>56.724675</td>
+      <td>61.471850</td>
+      <td>30.515855</td>
+      <td>41.264085</td>
+      <td>113.848110</td>
+      <td>43.776680</td>
+      <td>59.724915</td>
+      <td>63.111060</td>
+      <td>46.477565</td>
+      <td>40.318430</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Ni</td>
+      <td>86.145900</td>
+      <td>84.112970</td>
+      <td>0.000000</td>
+      <td>32.610200</td>
+      <td>19.606290</td>
+      <td>6.974190</td>
+      <td>113.699310</td>
+      <td>110.376400</td>
+      <td>15.395985</td>
+      <td>5.209340</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Cu</td>
+      <td>38.920940</td>
+      <td>57.605295</td>
+      <td>14.230070</td>
+      <td>40.398300</td>
+      <td>33.403920</td>
+      <td>36.730165</td>
+      <td>64.492160</td>
+      <td>55.354105</td>
+      <td>48.073420</td>
+      <td>17.639725</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Zn</td>
+      <td>112.215845</td>
+      <td>84.940745</td>
+      <td>57.225095</td>
+      <td>61.446435</td>
+      <td>73.109290</td>
+      <td>61.682780</td>
+      <td>76.389350</td>
+      <td>77.283280</td>
+      <td>72.055990</td>
+      <td>68.198515</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Rb</td>
+      <td>6.803890</td>
+      <td>6.166275</td>
+      <td>36.393375</td>
+      <td>54.671030</td>
+      <td>21.738350</td>
+      <td>17.638120</td>
+      <td>4.654470</td>
+      <td>4.931115</td>
+      <td>11.973755</td>
+      <td>34.584485</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Sr</td>
+      <td>422.427260</td>
+      <td>417.734605</td>
+      <td>486.840420</td>
+      <td>464.036495</td>
+      <td>458.905580</td>
+      <td>508.413025</td>
+      <td>450.941740</td>
+      <td>436.108190</td>
+      <td>511.798480</td>
+      <td>466.560560</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Y</td>
+      <td>34.130895</td>
+      <td>32.576285</td>
+      <td>17.047525</td>
+      <td>21.525005</td>
+      <td>21.327820</td>
+      <td>21.623960</td>
+      <td>27.903785</td>
+      <td>27.403260</td>
+      <td>25.767675</td>
+      <td>20.473845</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Zr</td>
+      <td>242.215045</td>
+      <td>228.223780</td>
+      <td>125.076470</td>
+      <td>162.656040</td>
+      <td>156.890695</td>
+      <td>113.772965</td>
+      <td>181.152270</td>
+      <td>176.452635</td>
+      <td>160.887680</td>
+      <td>202.485365</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Nb</td>
+      <td>12.786315</td>
+      <td>11.888055</td>
+      <td>7.548250</td>
+      <td>10.700565</td>
+      <td>7.579300</td>
+      <td>6.687820</td>
+      <td>8.780575</td>
+      <td>8.593975</td>
+      <td>7.433585</td>
+      <td>9.551550</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Mo</td>
+      <td>1.274745</td>
+      <td>1.163255</td>
+      <td>1.383555</td>
+      <td>1.858910</td>
+      <td>1.437390</td>
+      <td>1.119465</td>
+      <td>0.948945</td>
+      <td>0.928075</td>
+      <td>1.156255</td>
+      <td>1.703255</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Sn</td>
+      <td>2.271835</td>
+      <td>1.841295</td>
+      <td>0.960280</td>
+      <td>1.333495</td>
+      <td>1.049400</td>
+      <td>1.044815</td>
+      <td>1.563500</td>
+      <td>1.550855</td>
+      <td>1.228605</td>
+      <td>1.134110</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Sb</td>
+      <td>0.136755</td>
+      <td>0.087385</td>
+      <td>0.346090</td>
+      <td>0.991190</td>
+      <td>0.210335</td>
+      <td>0.182810</td>
+      <td>0.093170</td>
+      <td>0.081115</td>
+      <td>0.215055</td>
+      <td>0.256425</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Cs</td>
+      <td>0.093680</td>
+      <td>0.073915</td>
+      <td>0.682105</td>
+      <td>1.484755</td>
+      <td>0.700185</td>
+      <td>0.295660</td>
+      <td>0.049265</td>
+      <td>0.034095</td>
+      <td>0.355615</td>
+      <td>1.095830</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Ba</td>
+      <td>170.615035</td>
+      <td>301.968910</td>
+      <td>559.878160</td>
+      <td>976.076615</td>
+      <td>423.303250</td>
+      <td>479.836395</td>
+      <td>366.469610</td>
+      <td>189.004425</td>
+      <td>1528.539135</td>
+      <td>550.949090</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>La</td>
+      <td>18.327615</td>
+      <td>17.425320</td>
+      <td>19.289305</td>
+      <td>24.634895</td>
+      <td>16.347460</td>
+      <td>16.006740</td>
+      <td>13.954415</td>
+      <td>13.863730</td>
+      <td>13.959870</td>
+      <td>21.776170</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>Ce</td>
+      <td>41.838395</td>
+      <td>39.723240</td>
+      <td>34.404905</td>
+      <td>42.784250</td>
+      <td>32.665725</td>
+      <td>30.861515</td>
+      <td>31.542975</td>
+      <td>31.338910</td>
+      <td>30.010785</td>
+      <td>42.206800</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>Pr</td>
+      <td>5.619535</td>
+      <td>5.355625</td>
+      <td>4.410390</td>
+      <td>5.362755</td>
+      <td>4.018050</td>
+      <td>3.822280</td>
+      <td>4.192105</td>
+      <td>4.158420</td>
+      <td>3.969190</td>
+      <td>5.198955</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>Nd</td>
+      <td>23.196890</td>
+      <td>22.029325</td>
+      <td>16.669610</td>
+      <td>19.809975</td>
+      <td>15.845775</td>
+      <td>15.168485</td>
+      <td>17.552085</td>
+      <td>17.304365</td>
+      <td>16.726315</td>
+      <td>19.343915</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>Sm</td>
+      <td>5.475820</td>
+      <td>5.276160</td>
+      <td>3.502500</td>
+      <td>4.063470</td>
+      <td>3.589315</td>
+      <td>3.446775</td>
+      <td>4.308640</td>
+      <td>4.214110</td>
+      <td>4.074150</td>
+      <td>3.919430</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>Eu</td>
+      <td>1.731780</td>
+      <td>1.722150</td>
+      <td>1.154215</td>
+      <td>1.202525</td>
+      <td>1.268110</td>
+      <td>1.134785</td>
+      <td>1.492635</td>
+      <td>1.471965</td>
+      <td>1.582015</td>
+      <td>1.265895</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>Gd</td>
+      <td>5.205960</td>
+      <td>4.971785</td>
+      <td>3.293800</td>
+      <td>4.033820</td>
+      <td>3.500060</td>
+      <td>3.462720</td>
+      <td>4.215495</td>
+      <td>4.135380</td>
+      <td>4.308160</td>
+      <td>3.703960</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>Tb</td>
+      <td>0.992125</td>
+      <td>0.962540</td>
+      <td>0.523430</td>
+      <td>0.619040</td>
+      <td>0.609295</td>
+      <td>0.592765</td>
+      <td>0.799105</td>
+      <td>0.783750</td>
+      <td>0.726875</td>
+      <td>0.600130</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>Gd</td>
+      <td>5.893545</td>
+      <td>5.605355</td>
+      <td>3.313795</td>
+      <td>3.947685</td>
+      <td>3.726495</td>
+      <td>3.634980</td>
+      <td>4.722250</td>
+      <td>4.653645</td>
+      <td>4.279445</td>
+      <td>3.762320</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>Dy</td>
+      <td>6.267110</td>
+      <td>6.058840</td>
+      <td>3.109090</td>
+      <td>3.697515</td>
+      <td>3.852510</td>
+      <td>3.749480</td>
+      <td>5.116005</td>
+      <td>5.052465</td>
+      <td>4.649530</td>
+      <td>3.628135</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>Ho</td>
+      <td>1.344725</td>
+      <td>1.308495</td>
+      <td>0.634645</td>
+      <td>0.773355</td>
+      <td>0.824650</td>
+      <td>0.795890</td>
+      <td>1.100925</td>
+      <td>1.091240</td>
+      <td>1.004640</td>
+      <td>0.771575</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>Er</td>
+      <td>3.387845</td>
+      <td>3.242235</td>
+      <td>1.653010</td>
+      <td>2.012115</td>
+      <td>2.119145</td>
+      <td>2.099340</td>
+      <td>2.815605</td>
+      <td>2.758695</td>
+      <td>2.562695</td>
+      <td>2.005875</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>Yb</td>
+      <td>3.628660</td>
+      <td>3.494565</td>
+      <td>1.730860</td>
+      <td>2.128040</td>
+      <td>2.287930</td>
+      <td>2.260430</td>
+      <td>2.978180</td>
+      <td>2.942470</td>
+      <td>2.742745</td>
+      <td>2.164850</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>Lu</td>
+      <td>0.503835</td>
+      <td>0.485125</td>
+      <td>0.253680</td>
+      <td>0.308440</td>
+      <td>0.327360</td>
+      <td>0.326225</td>
+      <td>0.413850</td>
+      <td>0.411225</td>
+      <td>0.392585</td>
+      <td>0.327160</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>Hf</td>
+      <td>5.103165</td>
+      <td>4.942775</td>
+      <td>3.797210</td>
+      <td>4.442640</td>
+      <td>4.136640</td>
+      <td>3.563225</td>
+      <td>4.222760</td>
+      <td>4.182050</td>
+      <td>4.307170</td>
+      <td>4.892055</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>Ta</td>
+      <td>0.902885</td>
+      <td>0.942670</td>
+      <td>0.654720</td>
+      <td>0.867125</td>
+      <td>0.889045</td>
+      <td>0.578760</td>
+      <td>0.812960</td>
+      <td>0.726360</td>
+      <td>0.624090</td>
+      <td>0.947995</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>Hg</td>
+      <td>41.488855</td>
+      <td>65.964430</td>
+      <td>49.053425</td>
+      <td>51.687520</td>
+      <td>104.932600</td>
+      <td>62.733220</td>
+      <td>74.066155</td>
+      <td>60.408540</td>
+      <td>59.548315</td>
+      <td>102.552985</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>Pb</td>
+      <td>3.367765</td>
+      <td>3.112350</td>
+      <td>6.150425</td>
+      <td>11.785785</td>
+      <td>7.896685</td>
+      <td>8.836210</td>
+      <td>2.641625</td>
+      <td>2.701455</td>
+      <td>5.746765</td>
+      <td>9.136775</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>Th</td>
+      <td>1.267790</td>
+      <td>1.160950</td>
+      <td>6.256175</td>
+      <td>9.636610</td>
+      <td>4.731845</td>
+      <td>3.268455</td>
+      <td>1.515110</td>
+      <td>1.511540</td>
+      <td>2.626995</td>
+      <td>6.394580</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>U</td>
+      <td>0.404515</td>
+      <td>0.364225</td>
+      <td>1.662645</td>
+      <td>2.640440</td>
+      <td>1.187290</td>
+      <td>0.898820</td>
+      <td>0.348515</td>
+      <td>0.321695</td>
+      <td>0.687750</td>
+      <td>1.535115</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_names</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;../spiderman.xlsx&quot;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">name_row</span> <span class="o">=</span> <span class="n">sample_names</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">name_row</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     D2004-1
+1     D2004-3
+2     D2004-4
+3     D2004-5
+4     D2004-7
+5     D2004-8
+6    D2004-10
+7    D2004-11
+8    D2004-12
+9    D2004-13
+Name: Sample, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spdr_elements</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;Cs&quot;</span><span class="p">,</span> <span class="s2">&quot;Rb&quot;</span><span class="p">,</span> <span class="s2">&quot;Ba&quot;</span><span class="p">,</span> <span class="s2">&quot;Th&quot;</span><span class="p">,</span> <span class="s2">&quot;U&quot;</span><span class="p">,</span> <span class="s2">&quot;Nb&quot;</span><span class="p">,</span> <span class="s2">&quot;Ta&quot;</span><span class="p">,</span> <span class="s2">&quot;K&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;La&quot;</span><span class="p">,</span> <span class="s2">&quot;Ce&quot;</span><span class="p">,</span> <span class="s2">&quot;Pb&quot;</span><span class="p">,</span> <span class="s2">&quot;Sr&quot;</span><span class="p">,</span> <span class="s2">&quot;P&quot;</span><span class="p">,</span> <span class="s2">&quot;Nd&quot;</span><span class="p">,</span> <span class="s2">&quot;Sm&quot;</span><span class="p">,</span> <span class="s2">&quot;Zr&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;Hf&quot;</span><span class="p">,</span> <span class="s2">&quot;Eu&quot;</span><span class="p">,</span> <span class="s2">&quot;Ti&quot;</span><span class="p">,</span> <span class="s2">&quot;Tb&quot;</span><span class="p">,</span> <span class="s2">&quot;Y&quot;</span><span class="p">,</span> <span class="s2">&quot;Yb&quot;</span><span class="p">,</span> <span class="s2">&quot;Lu&quot;</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dataset</span> <span class="o">=</span> <span class="n">dataset_raw</span><span class="p">[</span><span class="n">dataset_raw</span><span class="p">[</span><span class="s2">&quot;Elements&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">spdr_elements</span><span class="p">)]</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;Elements&quot;</span><span class="p">)</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">reindex</span><span class="p">(</span><span class="n">spdr_elements</span><span class="p">)</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">dataset</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Elements</th>
+      <th>D2004-1</th>
+      <th>D2004-3</th>
+      <th>D2004-4</th>
+      <th>D2004-5</th>
+      <th>D2004-7</th>
+      <th>D2004-8</th>
+      <th>D2004-10</th>
+      <th>D2004-11</th>
+      <th>D2004-12</th>
+      <th>D2004-13</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Cs</td>
+      <td>0.093680</td>
+      <td>0.073915</td>
+      <td>0.682105</td>
+      <td>1.484755</td>
+      <td>0.700185</td>
+      <td>0.295660</td>
+      <td>0.049265</td>
+      <td>0.034095</td>
+      <td>0.355615</td>
+      <td>1.095830</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Rb</td>
+      <td>6.803890</td>
+      <td>6.166275</td>
+      <td>36.393375</td>
+      <td>54.671030</td>
+      <td>21.738350</td>
+      <td>17.638120</td>
+      <td>4.654470</td>
+      <td>4.931115</td>
+      <td>11.973755</td>
+      <td>34.584485</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Ba</td>
+      <td>170.615035</td>
+      <td>301.968910</td>
+      <td>559.878160</td>
+      <td>976.076615</td>
+      <td>423.303250</td>
+      <td>479.836395</td>
+      <td>366.469610</td>
+      <td>189.004425</td>
+      <td>1528.539135</td>
+      <td>550.949090</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Th</td>
+      <td>1.267790</td>
+      <td>1.160950</td>
+      <td>6.256175</td>
+      <td>9.636610</td>
+      <td>4.731845</td>
+      <td>3.268455</td>
+      <td>1.515110</td>
+      <td>1.511540</td>
+      <td>2.626995</td>
+      <td>6.394580</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>U</td>
+      <td>0.404515</td>
+      <td>0.364225</td>
+      <td>1.662645</td>
+      <td>2.640440</td>
+      <td>1.187290</td>
+      <td>0.898820</td>
+      <td>0.348515</td>
+      <td>0.321695</td>
+      <td>0.687750</td>
+      <td>1.535115</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Nb</td>
+      <td>12.786315</td>
+      <td>11.888055</td>
+      <td>7.548250</td>
+      <td>10.700565</td>
+      <td>7.579300</td>
+      <td>6.687820</td>
+      <td>8.780575</td>
+      <td>8.593975</td>
+      <td>7.433585</td>
+      <td>9.551550</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Ta</td>
+      <td>0.902885</td>
+      <td>0.942670</td>
+      <td>0.654720</td>
+      <td>0.867125</td>
+      <td>0.889045</td>
+      <td>0.578760</td>
+      <td>0.812960</td>
+      <td>0.726360</td>
+      <td>0.624090</td>
+      <td>0.947995</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>K</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>La</td>
+      <td>18.327615</td>
+      <td>17.425320</td>
+      <td>19.289305</td>
+      <td>24.634895</td>
+      <td>16.347460</td>
+      <td>16.006740</td>
+      <td>13.954415</td>
+      <td>13.863730</td>
+      <td>13.959870</td>
+      <td>21.776170</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Ce</td>
+      <td>41.838395</td>
+      <td>39.723240</td>
+      <td>34.404905</td>
+      <td>42.784250</td>
+      <td>32.665725</td>
+      <td>30.861515</td>
+      <td>31.542975</td>
+      <td>31.338910</td>
+      <td>30.010785</td>
+      <td>42.206800</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Pb</td>
+      <td>3.367765</td>
+      <td>3.112350</td>
+      <td>6.150425</td>
+      <td>11.785785</td>
+      <td>7.896685</td>
+      <td>8.836210</td>
+      <td>2.641625</td>
+      <td>2.701455</td>
+      <td>5.746765</td>
+      <td>9.136775</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Sr</td>
+      <td>422.427260</td>
+      <td>417.734605</td>
+      <td>486.840420</td>
+      <td>464.036495</td>
+      <td>458.905580</td>
+      <td>508.413025</td>
+      <td>450.941740</td>
+      <td>436.108190</td>
+      <td>511.798480</td>
+      <td>466.560560</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>P</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Nd</td>
+      <td>23.196890</td>
+      <td>22.029325</td>
+      <td>16.669610</td>
+      <td>19.809975</td>
+      <td>15.845775</td>
+      <td>15.168485</td>
+      <td>17.552085</td>
+      <td>17.304365</td>
+      <td>16.726315</td>
+      <td>19.343915</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Sm</td>
+      <td>5.475820</td>
+      <td>5.276160</td>
+      <td>3.502500</td>
+      <td>4.063470</td>
+      <td>3.589315</td>
+      <td>3.446775</td>
+      <td>4.308640</td>
+      <td>4.214110</td>
+      <td>4.074150</td>
+      <td>3.919430</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Zr</td>
+      <td>242.215045</td>
+      <td>228.223780</td>
+      <td>125.076470</td>
+      <td>162.656040</td>
+      <td>156.890695</td>
+      <td>113.772965</td>
+      <td>181.152270</td>
+      <td>176.452635</td>
+      <td>160.887680</td>
+      <td>202.485365</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Hf</td>
+      <td>5.103165</td>
+      <td>4.942775</td>
+      <td>3.797210</td>
+      <td>4.442640</td>
+      <td>4.136640</td>
+      <td>3.563225</td>
+      <td>4.222760</td>
+      <td>4.182050</td>
+      <td>4.307170</td>
+      <td>4.892055</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Eu</td>
+      <td>1.731780</td>
+      <td>1.722150</td>
+      <td>1.154215</td>
+      <td>1.202525</td>
+      <td>1.268110</td>
+      <td>1.134785</td>
+      <td>1.492635</td>
+      <td>1.471965</td>
+      <td>1.582015</td>
+      <td>1.265895</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Ti</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Tb</td>
+      <td>0.992125</td>
+      <td>0.962540</td>
+      <td>0.523430</td>
+      <td>0.619040</td>
+      <td>0.609295</td>
+      <td>0.592765</td>
+      <td>0.799105</td>
+      <td>0.783750</td>
+      <td>0.726875</td>
+      <td>0.600130</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Y</td>
+      <td>34.130895</td>
+      <td>32.576285</td>
+      <td>17.047525</td>
+      <td>21.525005</td>
+      <td>21.327820</td>
+      <td>21.623960</td>
+      <td>27.903785</td>
+      <td>27.403260</td>
+      <td>25.767675</td>
+      <td>20.473845</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>Yb</td>
+      <td>3.628660</td>
+      <td>3.494565</td>
+      <td>1.730860</td>
+      <td>2.128040</td>
+      <td>2.287930</td>
+      <td>2.260430</td>
+      <td>2.978180</td>
+      <td>2.942470</td>
+      <td>2.742745</td>
+      <td>2.164850</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>Lu</td>
+      <td>0.503835</td>
+      <td>0.485125</td>
+      <td>0.253680</td>
+      <td>0.308440</td>
+      <td>0.327360</td>
+      <td>0.326225</td>
+      <td>0.413850</td>
+      <td>0.411225</td>
+      <td>0.392585</td>
+      <td>0.327160</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reference</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;../reference.xlsx&quot;</span><span class="p">)</span>
+<span class="n">reference</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Elements</th>
+      <th>Primitive Mantle</th>
+      <th>OIB values</th>
+      <th>OIB</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Cs</td>
+      <td>0.0079</td>
+      <td>0.387</td>
+      <td>48.987342</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Rb</td>
+      <td>0.6350</td>
+      <td>31.000</td>
+      <td>48.818898</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Ba</td>
+      <td>6.9890</td>
+      <td>350.000</td>
+      <td>50.078695</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Th</td>
+      <td>0.0850</td>
+      <td>4.000</td>
+      <td>47.058824</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>U</td>
+      <td>0.0210</td>
+      <td>1.020</td>
+      <td>48.571429</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Nb</td>
+      <td>0.7130</td>
+      <td>48.000</td>
+      <td>67.321178</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Ta</td>
+      <td>0.0410</td>
+      <td>2.700</td>
+      <td>65.853659</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>K</td>
+      <td>0.0300</td>
+      <td>1.445</td>
+      <td>48.166667</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>La</td>
+      <td>0.6870</td>
+      <td>37.000</td>
+      <td>53.857351</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Ce</td>
+      <td>1.7750</td>
+      <td>80.000</td>
+      <td>45.070423</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Pb</td>
+      <td>0.0710</td>
+      <td>3.200</td>
+      <td>45.070423</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Sr</td>
+      <td>21.1000</td>
+      <td>660.000</td>
+      <td>31.279621</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>P</td>
+      <td>0.0218</td>
+      <td>0.619</td>
+      <td>28.394495</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Nd</td>
+      <td>1.3540</td>
+      <td>38.500</td>
+      <td>28.434269</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Sm</td>
+      <td>0.4440</td>
+      <td>10.000</td>
+      <td>22.522523</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Zr</td>
+      <td>11.2000</td>
+      <td>280.000</td>
+      <td>25.000000</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Hf</td>
+      <td>0.3090</td>
+      <td>7.800</td>
+      <td>25.242718</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Eu</td>
+      <td>0.1680</td>
+      <td>3.000</td>
+      <td>17.857143</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Ti</td>
+      <td>0.2168</td>
+      <td>2.870</td>
+      <td>13.238007</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Tb</td>
+      <td>0.1080</td>
+      <td>1.050</td>
+      <td>9.722222</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Y</td>
+      <td>4.5500</td>
+      <td>29.000</td>
+      <td>6.373626</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>Yb</td>
+      <td>0.4930</td>
+      <td>2.160</td>
+      <td>4.381339</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>Lu</td>
+      <td>0.0740</td>
+      <td>0.300</td>
+      <td>4.054054</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">normalised_dataset</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">dataset</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">size</span><span class="p">):</span>
+    <span class="n">calculated</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">/</span> <span class="n">reference</span><span class="p">[</span><span class="s2">&quot;Primitive Mantle&quot;</span><span class="p">]</span>
+    <span class="n">normalised_dataset</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">calculated</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">normalised_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">normalised_dataset</span><span class="p">)</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+<span class="n">normalised_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>11.858228</td>
+      <td>9.356329</td>
+      <td>86.342405</td>
+      <td>187.943671</td>
+      <td>88.631013</td>
+      <td>37.425316</td>
+      <td>6.236076</td>
+      <td>4.315823</td>
+      <td>45.014557</td>
+      <td>138.712658</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>10.714787</td>
+      <td>9.710669</td>
+      <td>57.312402</td>
+      <td>86.096110</td>
+      <td>34.233622</td>
+      <td>27.776567</td>
+      <td>7.329874</td>
+      <td>7.765535</td>
+      <td>18.856307</td>
+      <td>54.463756</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>24.411938</td>
+      <td>43.206311</td>
+      <td>80.108479</td>
+      <td>139.658981</td>
+      <td>60.567070</td>
+      <td>68.655944</td>
+      <td>52.435200</td>
+      <td>27.043128</td>
+      <td>218.706415</td>
+      <td>78.830890</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>14.915176</td>
+      <td>13.658235</td>
+      <td>73.602059</td>
+      <td>113.371882</td>
+      <td>55.668765</td>
+      <td>38.452412</td>
+      <td>17.824824</td>
+      <td>17.782824</td>
+      <td>30.905824</td>
+      <td>75.230353</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>19.262619</td>
+      <td>17.344048</td>
+      <td>79.173571</td>
+      <td>125.735238</td>
+      <td>56.537619</td>
+      <td>42.800952</td>
+      <td>16.595952</td>
+      <td>15.318810</td>
+      <td>32.750000</td>
+      <td>73.100714</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>17.933121</td>
+      <td>16.673289</td>
+      <td>10.586606</td>
+      <td>15.007805</td>
+      <td>10.630154</td>
+      <td>9.379832</td>
+      <td>12.314972</td>
+      <td>12.053261</td>
+      <td>10.425785</td>
+      <td>13.396283</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>22.021585</td>
+      <td>22.991951</td>
+      <td>15.968780</td>
+      <td>21.149390</td>
+      <td>21.684024</td>
+      <td>14.116098</td>
+      <td>19.828293</td>
+      <td>17.716098</td>
+      <td>15.221707</td>
+      <td>23.121829</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>26.677751</td>
+      <td>25.364367</td>
+      <td>28.077591</td>
+      <td>35.858654</td>
+      <td>23.795429</td>
+      <td>23.299476</td>
+      <td>20.312103</td>
+      <td>20.180102</td>
+      <td>20.320044</td>
+      <td>31.697482</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>23.570927</td>
+      <td>22.379290</td>
+      <td>19.383045</td>
+      <td>24.103803</td>
+      <td>18.403225</td>
+      <td>17.386769</td>
+      <td>17.770690</td>
+      <td>17.655724</td>
+      <td>16.907485</td>
+      <td>23.778479</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>47.433310</td>
+      <td>43.835915</td>
+      <td>86.625704</td>
+      <td>165.996972</td>
+      <td>111.220915</td>
+      <td>124.453662</td>
+      <td>37.205986</td>
+      <td>38.048662</td>
+      <td>80.940352</td>
+      <td>128.686972</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>20.020249</td>
+      <td>19.797849</td>
+      <td>23.073006</td>
+      <td>21.992251</td>
+      <td>21.749080</td>
+      <td>24.095404</td>
+      <td>21.371646</td>
+      <td>20.668635</td>
+      <td>24.255852</td>
+      <td>22.111875</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>17.132120</td>
+      <td>16.269812</td>
+      <td>12.311381</td>
+      <td>14.630705</td>
+      <td>11.702936</td>
+      <td>11.202722</td>
+      <td>12.963135</td>
+      <td>12.780181</td>
+      <td>12.353261</td>
+      <td>14.286496</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>12.332928</td>
+      <td>11.883243</td>
+      <td>7.888514</td>
+      <td>9.151959</td>
+      <td>8.084043</td>
+      <td>7.763007</td>
+      <td>9.704144</td>
+      <td>9.491239</td>
+      <td>9.176014</td>
+      <td>8.827545</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>21.626343</td>
+      <td>20.377123</td>
+      <td>11.167542</td>
+      <td>14.522861</td>
+      <td>14.008098</td>
+      <td>10.158300</td>
+      <td>16.174310</td>
+      <td>15.754700</td>
+      <td>14.364971</td>
+      <td>18.079050</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>16.515097</td>
+      <td>15.996036</td>
+      <td>12.288706</td>
+      <td>14.377476</td>
+      <td>13.387184</td>
+      <td>11.531472</td>
+      <td>13.665890</td>
+      <td>13.534142</td>
+      <td>13.939061</td>
+      <td>15.831893</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>10.308214</td>
+      <td>10.250893</td>
+      <td>6.870327</td>
+      <td>7.157887</td>
+      <td>7.548274</td>
+      <td>6.754673</td>
+      <td>8.884732</td>
+      <td>8.761696</td>
+      <td>9.416756</td>
+      <td>7.535089</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>9.186343</td>
+      <td>8.912407</td>
+      <td>4.846574</td>
+      <td>5.731852</td>
+      <td>5.641620</td>
+      <td>5.488565</td>
+      <td>7.399120</td>
+      <td>7.256944</td>
+      <td>6.730324</td>
+      <td>5.556759</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>7.501296</td>
+      <td>7.159623</td>
+      <td>3.746709</td>
+      <td>4.730770</td>
+      <td>4.687433</td>
+      <td>4.752519</td>
+      <td>6.132700</td>
+      <td>6.022695</td>
+      <td>5.663225</td>
+      <td>4.499746</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>7.360365</td>
+      <td>7.088367</td>
+      <td>3.510872</td>
+      <td>4.316511</td>
+      <td>4.640832</td>
+      <td>4.585051</td>
+      <td>6.040933</td>
+      <td>5.968499</td>
+      <td>5.563377</td>
+      <td>4.391176</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>6.808581</td>
+      <td>6.555743</td>
+      <td>3.428108</td>
+      <td>4.168108</td>
+      <td>4.423784</td>
+      <td>4.408446</td>
+      <td>5.592568</td>
+      <td>5.557095</td>
+      <td>5.305203</td>
+      <td>4.421081</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reference</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Elements</th>
+      <th>Primitive Mantle</th>
+      <th>OIB values</th>
+      <th>OIB</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Cs</td>
+      <td>0.0079</td>
+      <td>0.387</td>
+      <td>48.987342</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Rb</td>
+      <td>0.6350</td>
+      <td>31.000</td>
+      <td>48.818898</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Ba</td>
+      <td>6.9890</td>
+      <td>350.000</td>
+      <td>50.078695</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Th</td>
+      <td>0.0850</td>
+      <td>4.000</td>
+      <td>47.058824</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>U</td>
+      <td>0.0210</td>
+      <td>1.020</td>
+      <td>48.571429</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Nb</td>
+      <td>0.7130</td>
+      <td>48.000</td>
+      <td>67.321178</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Ta</td>
+      <td>0.0410</td>
+      <td>2.700</td>
+      <td>65.853659</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>K</td>
+      <td>0.0300</td>
+      <td>1.445</td>
+      <td>48.166667</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>La</td>
+      <td>0.6870</td>
+      <td>37.000</td>
+      <td>53.857351</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Ce</td>
+      <td>1.7750</td>
+      <td>80.000</td>
+      <td>45.070423</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Pb</td>
+      <td>0.0710</td>
+      <td>3.200</td>
+      <td>45.070423</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Sr</td>
+      <td>21.1000</td>
+      <td>660.000</td>
+      <td>31.279621</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>P</td>
+      <td>0.0218</td>
+      <td>0.619</td>
+      <td>28.394495</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Nd</td>
+      <td>1.3540</td>
+      <td>38.500</td>
+      <td>28.434269</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Sm</td>
+      <td>0.4440</td>
+      <td>10.000</td>
+      <td>22.522523</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Zr</td>
+      <td>11.2000</td>
+      <td>280.000</td>
+      <td>25.000000</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Hf</td>
+      <td>0.3090</td>
+      <td>7.800</td>
+      <td>25.242718</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Eu</td>
+      <td>0.1680</td>
+      <td>3.000</td>
+      <td>17.857143</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Ti</td>
+      <td>0.2168</td>
+      <td>2.870</td>
+      <td>13.238007</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Tb</td>
+      <td>0.1080</td>
+      <td>1.050</td>
+      <td>9.722222</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Y</td>
+      <td>4.5500</td>
+      <td>29.000</td>
+      <td>6.373626</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>Yb</td>
+      <td>0.4930</td>
+      <td>2.160</td>
+      <td>4.381339</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>Lu</td>
+      <td>0.0740</td>
+      <td>0.300</td>
+      <td>4.054054</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">normalised_df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">size</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;Elements&quot;</span><span class="p">],</span> <span class="n">normalised_df</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name_row</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;Elements&quot;</span><span class="p">],</span> <span class="n">reference</span><span class="p">[</span><span class="s2">&quot;OIB&quot;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;OIB&quot;</span><span class="p">)</span> <span class="c1">#OIB</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;sample name: </span><span class="si">{</span><span class="n">name_row</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mf">1e0</span><span class="p">,</span><span class="mf">1e3</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/a6351ddc6afcbf6911912f6b12246e129e328347015f3df261c9d6e21fa76772.png" src="_images/a6351ddc6afcbf6911912f6b12246e129e328347015f3df261c9d6e21fa76772.png" />
+<img alt="_images/a8dff59e3361e96164d124c3841181e773dafbabdba5e9e62bf24cfc78138b50.png" src="_images/a8dff59e3361e96164d124c3841181e773dafbabdba5e9e62bf24cfc78138b50.png" />
+<img alt="_images/75d03faf16733f9d1a19b21510e232d3f7be4af244eac32522a82c4ea0b52579.png" src="_images/75d03faf16733f9d1a19b21510e232d3f7be4af244eac32522a82c4ea0b52579.png" />
+<img alt="_images/4ba8d324f7841d3bb728ad6744acec002e16a8a76f996867b2eb33ba24e31d05.png" src="_images/4ba8d324f7841d3bb728ad6744acec002e16a8a76f996867b2eb33ba24e31d05.png" />
+<img alt="_images/da9481a7043a30accd59a7a3a66bdfabbaf9355a56375234c68fca5929abcd41.png" src="_images/da9481a7043a30accd59a7a3a66bdfabbaf9355a56375234c68fca5929abcd41.png" />
+<img alt="_images/e30934ebbccb72df80ecb2e937ec4d3a87f077232669bdfe2f0cbac92206495a.png" src="_images/e30934ebbccb72df80ecb2e937ec4d3a87f077232669bdfe2f0cbac92206495a.png" />
+<img alt="_images/a436c0d83906207f65cf153cff80e0c141bd6b5bd8a1bca898ea14c908815c03.png" src="_images/a436c0d83906207f65cf153cff80e0c141bd6b5bd8a1bca898ea14c908815c03.png" />
+<img alt="_images/32efce724843cb2142cc3e80c6f61e7c5045a500f9a694496172c3610fd5b6a5.png" src="_images/32efce724843cb2142cc3e80c6f61e7c5045a500f9a694496172c3610fd5b6a5.png" />
+<img alt="_images/45bc24008100eec5597431571acb593fe8ee6c4245c4936db03545553bde2549.png" src="_images/45bc24008100eec5597431571acb593fe8ee6c4245c4936db03545553bde2549.png" />
+<img alt="_images/f6c9d3a21687b52192b093b963f6bfb83d76171893d1376036708df2c3b10f8b.png" src="_images/f6c9d3a21687b52192b093b963f6bfb83d76171893d1376036708df2c3b10f8b.png" />
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="ana_iz_element.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Develidağ Harker</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Taha Altar Çağ
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

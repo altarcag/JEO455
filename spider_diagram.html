@@ -1,0 +1,1954 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>örnek veri seti ile spider diyagramı &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'spider_diagram';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Develidağ" href="Develida%C4%9F.html" />
+    <link rel="prev" title="Plots" href="plots.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="My sample book - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Giriş
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="plots.html">Plots</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">örnek veri seti ile spider diyagramı</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="Develida%C4%9F.html">Develidağ</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="ana_iz_element.html">Develidağ Harker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="develi_spider.html">Develidağ Spider</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fspider_diagram.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/spider_diagram.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>örnek veri seti ile spider diyagramı</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="ornek-veri-seti-ile-spider-diyagrami">
+<h1>örnek veri seti ile spider diyagramı<a class="headerlink" href="#ornek-veri-seti-ile-spider-diyagrami" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dataset</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;../spider_tac_1.xlsx&quot;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dataset</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Elements&quot;</span><span class="p">,</span> <span class="s2">&quot;Primitive Mantle&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">2</span><span class="p">:])</span>
+<span class="n">dataset</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Elements</th>
+      <th>Primitive Mantle</th>
+      <th>OIB values</th>
+      <th>OIB</th>
+      <th>BASALT</th>
+      <th>BASALT.1</th>
+      <th>BASALT.2</th>
+      <th>BASALT.3</th>
+      <th>BASALT.4</th>
+      <th>BASALT.5</th>
+      <th>...</th>
+      <th>EG-16</th>
+      <th>T6-7B rgf Duncker 1991</th>
+      <th>89sb100</th>
+      <th>QBW201 Thole menzies 1991</th>
+      <th>Lm91-101</th>
+      <th>Lm91-103</th>
+      <th>CR7-125</th>
+      <th>CR7-79</th>
+      <th>SM27 Simcoe</th>
+      <th>SH270 Shasta</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Cs</td>
+      <td>0.0079</td>
+      <td>0.387</td>
+      <td>48.987342</td>
+      <td>NaN</td>
+      <td>0.19</td>
+      <td>0.40</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.64</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1.47</td>
+      <td>0.12</td>
+      <td>0.359</td>
+      <td>0.202</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Rb</td>
+      <td>0.6350</td>
+      <td>31.000</td>
+      <td>48.818898</td>
+      <td>12.00</td>
+      <td>10.00</td>
+      <td>15.00</td>
+      <td>14.00</td>
+      <td>23.00</td>
+      <td>37.00</td>
+      <td>...</td>
+      <td>13.00</td>
+      <td>16.00</td>
+      <td>26.00</td>
+      <td>14.00</td>
+      <td>14.00</td>
+      <td>9.70</td>
+      <td>3.97</td>
+      <td>10.90</td>
+      <td>37.600</td>
+      <td>4.700</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Ba</td>
+      <td>6.9890</td>
+      <td>350.000</td>
+      <td>50.078695</td>
+      <td>201.00</td>
+      <td>143.00</td>
+      <td>335.00</td>
+      <td>208.00</td>
+      <td>315.00</td>
+      <td>407.00</td>
+      <td>...</td>
+      <td>264.00</td>
+      <td>416.00</td>
+      <td>797.00</td>
+      <td>153.00</td>
+      <td>398.00</td>
+      <td>181.00</td>
+      <td>329.00</td>
+      <td>566.00</td>
+      <td>672.000</td>
+      <td>122.000</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Th</td>
+      <td>0.0850</td>
+      <td>4.000</td>
+      <td>47.058824</td>
+      <td>NaN</td>
+      <td>1.07</td>
+      <td>2.73</td>
+      <td>1.89</td>
+      <td>NaN</td>
+      <td>3.36</td>
+      <td>...</td>
+      <td>3.50</td>
+      <td>NaN</td>
+      <td>13.65</td>
+      <td>2.20</td>
+      <td>2.20</td>
+      <td>1.14</td>
+      <td>3.53</td>
+      <td>1.23</td>
+      <td>3.960</td>
+      <td>0.640</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>U</td>
+      <td>0.0210</td>
+      <td>1.020</td>
+      <td>48.571429</td>
+      <td>NaN</td>
+      <td>0.30</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>0.70</td>
+      <td>0.60</td>
+      <td>2.99</td>
+      <td>NaN</td>
+      <td>0.80</td>
+      <td>0.80</td>
+      <td>1.42</td>
+      <td>0.30</td>
+      <td>1.310</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Nb</td>
+      <td>0.7130</td>
+      <td>48.000</td>
+      <td>67.321178</td>
+      <td>8.60</td>
+      <td>8.30</td>
+      <td>13.70</td>
+      <td>10.80</td>
+      <td>16.00</td>
+      <td>19.80</td>
+      <td>...</td>
+      <td>12.00</td>
+      <td>16.00</td>
+      <td>58.00</td>
+      <td>10.00</td>
+      <td>11.00</td>
+      <td>NaN</td>
+      <td>17.01</td>
+      <td>14.85</td>
+      <td>57.000</td>
+      <td>2.500</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Ta</td>
+      <td>0.0410</td>
+      <td>2.700</td>
+      <td>65.853659</td>
+      <td>NaN</td>
+      <td>0.37</td>
+      <td>0.81</td>
+      <td>0.86</td>
+      <td>NaN</td>
+      <td>2.39</td>
+      <td>...</td>
+      <td>0.90</td>
+      <td>NaN</td>
+      <td>2.51</td>
+      <td>0.57</td>
+      <td>0.50</td>
+      <td>0.13</td>
+      <td>1.21</td>
+      <td>3.00</td>
+      <td>3.770</td>
+      <td>0.188</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>K</td>
+      <td>0.0300</td>
+      <td>1.445</td>
+      <td>48.166667</td>
+      <td>0.47</td>
+      <td>0.47</td>
+      <td>0.76</td>
+      <td>0.56</td>
+      <td>0.94</td>
+      <td>1.14</td>
+      <td>...</td>
+      <td>0.99</td>
+      <td>1.00</td>
+      <td>1.04</td>
+      <td>0.53</td>
+      <td>0.97</td>
+      <td>0.80</td>
+      <td>1.71</td>
+      <td>0.82</td>
+      <td>2.250</td>
+      <td>0.280</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>La</td>
+      <td>0.6870</td>
+      <td>37.000</td>
+      <td>53.857351</td>
+      <td>10.50</td>
+      <td>10.10</td>
+      <td>17.20</td>
+      <td>12.70</td>
+      <td>19.30</td>
+      <td>21.70</td>
+      <td>...</td>
+      <td>17.80</td>
+      <td>20.10</td>
+      <td>97.00</td>
+      <td>23.00</td>
+      <td>18.20</td>
+      <td>7.53</td>
+      <td>26.30</td>
+      <td>20.82</td>
+      <td>40.900</td>
+      <td>4.480</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Ce</td>
+      <td>1.7750</td>
+      <td>80.000</td>
+      <td>45.070423</td>
+      <td>22.60</td>
+      <td>22.30</td>
+      <td>39.50</td>
+      <td>27.50</td>
+      <td>46.20</td>
+      <td>48.30</td>
+      <td>...</td>
+      <td>37.90</td>
+      <td>44.00</td>
+      <td>201.00</td>
+      <td>NaN</td>
+      <td>41.00</td>
+      <td>16.04</td>
+      <td>55.37</td>
+      <td>43.22</td>
+      <td>86.530</td>
+      <td>11.850</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Pb</td>
+      <td>0.0710</td>
+      <td>3.200</td>
+      <td>45.070423</td>
+      <td>6.00</td>
+      <td>2.00</td>
+      <td>3.00</td>
+      <td>6.00</td>
+      <td>3.00</td>
+      <td>6.00</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>4.20</td>
+      <td>4.90</td>
+      <td>3.40</td>
+      <td>7.79</td>
+      <td>3.33</td>
+      <td>2.060</td>
+      <td>1.790</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Sr</td>
+      <td>21.1000</td>
+      <td>660.000</td>
+      <td>31.279621</td>
+      <td>284.00</td>
+      <td>266.00</td>
+      <td>308.00</td>
+      <td>235.00</td>
+      <td>295.00</td>
+      <td>261.00</td>
+      <td>...</td>
+      <td>503.00</td>
+      <td>431.00</td>
+      <td>1214.00</td>
+      <td>253.00</td>
+      <td>564.00</td>
+      <td>758.00</td>
+      <td>391.00</td>
+      <td>319.00</td>
+      <td>995.000</td>
+      <td>232.000</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>P</td>
+      <td>0.0218</td>
+      <td>0.619</td>
+      <td>28.394495</td>
+      <td>0.22</td>
+      <td>0.23</td>
+      <td>0.30</td>
+      <td>0.28</td>
+      <td>0.36</td>
+      <td>0.45</td>
+      <td>...</td>
+      <td>0.32</td>
+      <td>0.30</td>
+      <td>1.18</td>
+      <td>0.17</td>
+      <td>0.35</td>
+      <td>0.12</td>
+      <td>0.43</td>
+      <td>0.62</td>
+      <td>0.900</td>
+      <td>0.110</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Nd</td>
+      <td>1.3540</td>
+      <td>38.500</td>
+      <td>28.434269</td>
+      <td>16.10</td>
+      <td>15.10</td>
+      <td>23.60</td>
+      <td>19.50</td>
+      <td>26.90</td>
+      <td>32.70</td>
+      <td>...</td>
+      <td>17.90</td>
+      <td>21.00</td>
+      <td>90.00</td>
+      <td>NaN</td>
+      <td>21.00</td>
+      <td>9.32</td>
+      <td>30.67</td>
+      <td>25.91</td>
+      <td>42.960</td>
+      <td>9.090</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Sm</td>
+      <td>0.4440</td>
+      <td>10.000</td>
+      <td>22.522523</td>
+      <td>4.20</td>
+      <td>4.83</td>
+      <td>6.08</td>
+      <td>5.08</td>
+      <td>6.72</td>
+      <td>8.12</td>
+      <td>...</td>
+      <td>3.84</td>
+      <td>4.80</td>
+      <td>14.84</td>
+      <td>4.30</td>
+      <td>4.40</td>
+      <td>2.12</td>
+      <td>8.56</td>
+      <td>6.56</td>
+      <td>8.450</td>
+      <td>2.770</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Zr</td>
+      <td>11.2000</td>
+      <td>280.000</td>
+      <td>25.000000</td>
+      <td>125.00</td>
+      <td>119.00</td>
+      <td>160.00</td>
+      <td>141.00</td>
+      <td>179.00</td>
+      <td>223.00</td>
+      <td>...</td>
+      <td>133.00</td>
+      <td>138.00</td>
+      <td>164.00</td>
+      <td>99.00</td>
+      <td>135.00</td>
+      <td>100.00</td>
+      <td>210.00</td>
+      <td>156.00</td>
+      <td>275.000</td>
+      <td>84.000</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Hf</td>
+      <td>0.3090</td>
+      <td>7.800</td>
+      <td>25.242718</td>
+      <td>NaN</td>
+      <td>3.00</td>
+      <td>4.20</td>
+      <td>3.90</td>
+      <td>NaN</td>
+      <td>6.20</td>
+      <td>...</td>
+      <td>2.90</td>
+      <td>NaN</td>
+      <td>4.02</td>
+      <td>2.70</td>
+      <td>3.20</td>
+      <td>1.83</td>
+      <td>5.85</td>
+      <td>3.74</td>
+      <td>5.360</td>
+      <td>1.900</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Eu</td>
+      <td>0.1680</td>
+      <td>3.000</td>
+      <td>17.857143</td>
+      <td>1.46</td>
+      <td>1.69</td>
+      <td>1.90</td>
+      <td>1.71</td>
+      <td>2.09</td>
+      <td>2.47</td>
+      <td>...</td>
+      <td>1.34</td>
+      <td>1.63</td>
+      <td>3.99</td>
+      <td>1.10</td>
+      <td>1.44</td>
+      <td>0.73</td>
+      <td>2.29</td>
+      <td>2.33</td>
+      <td>2.760</td>
+      <td>1.050</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Ti</td>
+      <td>0.2168</td>
+      <td>2.870</td>
+      <td>13.238007</td>
+      <td>1.56</td>
+      <td>1.68</td>
+      <td>1.99</td>
+      <td>1.87</td>
+      <td>2.37</td>
+      <td>3.00</td>
+      <td>...</td>
+      <td>1.47</td>
+      <td>1.40</td>
+      <td>1.92</td>
+      <td>1.32</td>
+      <td>1.14</td>
+      <td>0.52</td>
+      <td>2.53</td>
+      <td>2.17</td>
+      <td>2.280</td>
+      <td>1.010</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Tb</td>
+      <td>0.1080</td>
+      <td>1.050</td>
+      <td>9.722222</td>
+      <td>NaN</td>
+      <td>0.98</td>
+      <td>0.82</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1.30</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1.70</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1.31</td>
+      <td>1.10</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Y</td>
+      <td>4.5500</td>
+      <td>29.000</td>
+      <td>6.373626</td>
+      <td>32.00</td>
+      <td>32.00</td>
+      <td>24.00</td>
+      <td>38.00</td>
+      <td>39.00</td>
+      <td>50.00</td>
+      <td>...</td>
+      <td>27.00</td>
+      <td>28.00</td>
+      <td>31.00</td>
+      <td>22.00</td>
+      <td>18.00</td>
+      <td>17.00</td>
+      <td>38.76</td>
+      <td>35.48</td>
+      <td>31.000</td>
+      <td>23.000</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>Yb</td>
+      <td>0.4930</td>
+      <td>2.160</td>
+      <td>4.381339</td>
+      <td>2.82</td>
+      <td>2.97</td>
+      <td>3.77</td>
+      <td>3.44</td>
+      <td>3.60</td>
+      <td>4.44</td>
+      <td>...</td>
+      <td>2.24</td>
+      <td>2.23</td>
+      <td>2.12</td>
+      <td>2.00</td>
+      <td>1.80</td>
+      <td>0.98</td>
+      <td>3.43</td>
+      <td>3.06</td>
+      <td>1.930</td>
+      <td>2.500</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>Lu</td>
+      <td>0.0740</td>
+      <td>0.300</td>
+      <td>4.054054</td>
+      <td>0.46</td>
+      <td>0.47</td>
+      <td>0.53</td>
+      <td>0.54</td>
+      <td>0.57</td>
+      <td>0.73</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>0.32</td>
+      <td>0.31</td>
+      <td>0.28</td>
+      <td>0.28</td>
+      <td>0.16</td>
+      <td>0.52</td>
+      <td>0.55</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>23 rows × 89 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_names</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;../spider_tac_1.xlsx&quot;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">name_row</span> <span class="o">=</span> <span class="n">sample_names</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">:]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">attribute_row</span> <span class="o">=</span> <span class="n">sample_names</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">:]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;Elements&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     Cs
+1     Rb
+2     Ba
+3     Th
+4      U
+5     Nb
+6     Ta
+7      K
+8     La
+9     Ce
+10    Pb
+11    Sr
+12     P
+13    Nd
+14    Sm
+15    Zr
+16    Hf
+17    Eu
+18    Ti
+19    Tb
+20     Y
+21    Yb
+22    Lu
+Name: Elements, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pr_mantle</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">pr_mantle</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0      0.0079
+1      0.6350
+2      6.9890
+3      0.0850
+4      0.0210
+5      0.7130
+6      0.0410
+7      0.0300
+8      0.6870
+9      1.7750
+10     0.0710
+11    21.1000
+12     0.0218
+13     1.3540
+14     0.4440
+15    11.2000
+16     0.3090
+17     0.1680
+18     0.2168
+19     0.1080
+20     4.5500
+21     0.4930
+22     0.0740
+Name: Primitive Mantle, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">size</span>
+<span class="n">N</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>89
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">normalised_matrix</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
+    <span class="n">calculated</span> <span class="o">=</span>  <span class="n">dataset</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="n">i</span><span class="p">]</span> <span class="o">/</span>  <span class="n">pr_mantle</span>
+    <span class="n">normalised_matrix</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">calculated</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">normalised_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">normalised_matrix</span><span class="p">)</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+<span class="n">normalised_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+      <th>...</th>
+      <th>75</th>
+      <th>76</th>
+      <th>77</th>
+      <th>78</th>
+      <th>79</th>
+      <th>80</th>
+      <th>81</th>
+      <th>82</th>
+      <th>83</th>
+      <th>84</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>NaN</td>
+      <td>24.050633</td>
+      <td>50.632911</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>81.012658</td>
+      <td>51.898734</td>
+      <td>NaN</td>
+      <td>81.012658</td>
+      <td>49.367089</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>186.075949</td>
+      <td>15.189873</td>
+      <td>45.443038</td>
+      <td>25.569620</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>18.897638</td>
+      <td>15.748031</td>
+      <td>23.622047</td>
+      <td>22.047244</td>
+      <td>36.220472</td>
+      <td>58.267717</td>
+      <td>45.669291</td>
+      <td>39.370079</td>
+      <td>44.094488</td>
+      <td>42.519685</td>
+      <td>...</td>
+      <td>20.472441</td>
+      <td>25.196850</td>
+      <td>40.944882</td>
+      <td>22.047244</td>
+      <td>22.047244</td>
+      <td>15.275591</td>
+      <td>6.251969</td>
+      <td>17.165354</td>
+      <td>59.212598</td>
+      <td>7.401575</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>28.759479</td>
+      <td>20.460724</td>
+      <td>47.932465</td>
+      <td>29.761053</td>
+      <td>45.070826</td>
+      <td>58.234368</td>
+      <td>61.239090</td>
+      <td>50.937187</td>
+      <td>61.239090</td>
+      <td>56.946630</td>
+      <td>...</td>
+      <td>37.773644</td>
+      <td>59.522106</td>
+      <td>114.036343</td>
+      <td>21.891544</td>
+      <td>56.946630</td>
+      <td>25.897839</td>
+      <td>47.073973</td>
+      <td>80.984404</td>
+      <td>96.151095</td>
+      <td>17.456002</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NaN</td>
+      <td>12.588235</td>
+      <td>32.117647</td>
+      <td>22.235294</td>
+      <td>NaN</td>
+      <td>39.529412</td>
+      <td>32.588235</td>
+      <td>NaN</td>
+      <td>35.294118</td>
+      <td>37.764706</td>
+      <td>...</td>
+      <td>41.176471</td>
+      <td>NaN</td>
+      <td>160.588235</td>
+      <td>25.882353</td>
+      <td>25.882353</td>
+      <td>13.411765</td>
+      <td>41.529412</td>
+      <td>14.470588</td>
+      <td>46.588235</td>
+      <td>7.529412</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>NaN</td>
+      <td>14.285714</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>42.857143</td>
+      <td>NaN</td>
+      <td>47.619048</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>33.333333</td>
+      <td>28.571429</td>
+      <td>142.380952</td>
+      <td>NaN</td>
+      <td>38.095238</td>
+      <td>38.095238</td>
+      <td>67.619048</td>
+      <td>14.285714</td>
+      <td>62.380952</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>12.061711</td>
+      <td>11.640954</td>
+      <td>19.214586</td>
+      <td>15.147265</td>
+      <td>22.440393</td>
+      <td>27.769986</td>
+      <td>25.245442</td>
+      <td>24.964937</td>
+      <td>29.733520</td>
+      <td>24.123422</td>
+      <td>...</td>
+      <td>16.830295</td>
+      <td>22.440393</td>
+      <td>81.346424</td>
+      <td>14.025245</td>
+      <td>15.427770</td>
+      <td>NaN</td>
+      <td>23.856942</td>
+      <td>20.827489</td>
+      <td>79.943899</td>
+      <td>3.506311</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>NaN</td>
+      <td>9.024390</td>
+      <td>19.756098</td>
+      <td>20.975610</td>
+      <td>NaN</td>
+      <td>58.292683</td>
+      <td>18.536585</td>
+      <td>NaN</td>
+      <td>20.487805</td>
+      <td>24.634146</td>
+      <td>...</td>
+      <td>21.951220</td>
+      <td>NaN</td>
+      <td>61.219512</td>
+      <td>13.902439</td>
+      <td>12.195122</td>
+      <td>3.170732</td>
+      <td>29.512195</td>
+      <td>73.170732</td>
+      <td>91.951220</td>
+      <td>4.585366</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>15.666667</td>
+      <td>15.666667</td>
+      <td>25.333333</td>
+      <td>18.666667</td>
+      <td>31.333333</td>
+      <td>38.000000</td>
+      <td>41.666667</td>
+      <td>33.333333</td>
+      <td>37.666667</td>
+      <td>37.000000</td>
+      <td>...</td>
+      <td>33.000000</td>
+      <td>33.333333</td>
+      <td>34.666667</td>
+      <td>17.666667</td>
+      <td>32.333333</td>
+      <td>26.666667</td>
+      <td>57.000000</td>
+      <td>27.333333</td>
+      <td>75.000000</td>
+      <td>9.333333</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>15.283843</td>
+      <td>14.701601</td>
+      <td>25.036390</td>
+      <td>18.486172</td>
+      <td>28.093159</td>
+      <td>31.586608</td>
+      <td>33.478894</td>
+      <td>24.890830</td>
+      <td>36.826783</td>
+      <td>30.858806</td>
+      <td>...</td>
+      <td>25.909753</td>
+      <td>29.257642</td>
+      <td>141.193595</td>
+      <td>33.478894</td>
+      <td>26.491994</td>
+      <td>10.960699</td>
+      <td>38.282387</td>
+      <td>30.305677</td>
+      <td>59.534207</td>
+      <td>6.521106</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>12.732394</td>
+      <td>12.563380</td>
+      <td>22.253521</td>
+      <td>15.492958</td>
+      <td>26.028169</td>
+      <td>27.211268</td>
+      <td>28.056338</td>
+      <td>21.633803</td>
+      <td>30.591549</td>
+      <td>28.169014</td>
+      <td>...</td>
+      <td>21.352113</td>
+      <td>24.788732</td>
+      <td>113.239437</td>
+      <td>NaN</td>
+      <td>23.098592</td>
+      <td>9.036620</td>
+      <td>31.194366</td>
+      <td>24.349296</td>
+      <td>48.749296</td>
+      <td>6.676056</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>84.507042</td>
+      <td>28.169014</td>
+      <td>42.253521</td>
+      <td>84.507042</td>
+      <td>42.253521</td>
+      <td>84.507042</td>
+      <td>73.239437</td>
+      <td>56.338028</td>
+      <td>77.464789</td>
+      <td>92.957746</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>59.154930</td>
+      <td>69.014085</td>
+      <td>47.887324</td>
+      <td>109.718310</td>
+      <td>46.901408</td>
+      <td>29.014085</td>
+      <td>25.211268</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>13.459716</td>
+      <td>12.606635</td>
+      <td>14.597156</td>
+      <td>11.137441</td>
+      <td>13.981043</td>
+      <td>12.369668</td>
+      <td>12.748815</td>
+      <td>17.345972</td>
+      <td>16.492891</td>
+      <td>17.251185</td>
+      <td>...</td>
+      <td>23.838863</td>
+      <td>20.426540</td>
+      <td>57.535545</td>
+      <td>11.990521</td>
+      <td>26.729858</td>
+      <td>35.924171</td>
+      <td>18.530806</td>
+      <td>15.118483</td>
+      <td>47.156398</td>
+      <td>10.995261</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>10.091743</td>
+      <td>10.550459</td>
+      <td>13.761468</td>
+      <td>12.844037</td>
+      <td>16.513761</td>
+      <td>20.642202</td>
+      <td>19.724771</td>
+      <td>16.972477</td>
+      <td>21.100917</td>
+      <td>18.807339</td>
+      <td>...</td>
+      <td>14.678899</td>
+      <td>13.761468</td>
+      <td>54.128440</td>
+      <td>7.798165</td>
+      <td>16.055046</td>
+      <td>5.504587</td>
+      <td>19.724771</td>
+      <td>28.440367</td>
+      <td>41.284404</td>
+      <td>5.045872</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>11.890694</td>
+      <td>11.152142</td>
+      <td>17.429838</td>
+      <td>14.401773</td>
+      <td>19.867061</td>
+      <td>24.150665</td>
+      <td>22.451994</td>
+      <td>19.719350</td>
+      <td>23.855244</td>
+      <td>23.338257</td>
+      <td>...</td>
+      <td>13.220089</td>
+      <td>15.509601</td>
+      <td>66.469719</td>
+      <td>NaN</td>
+      <td>15.509601</td>
+      <td>6.883309</td>
+      <td>22.651403</td>
+      <td>19.135894</td>
+      <td>31.728213</td>
+      <td>6.713442</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>9.459459</td>
+      <td>10.878378</td>
+      <td>13.693694</td>
+      <td>11.441441</td>
+      <td>15.135135</td>
+      <td>18.288288</td>
+      <td>19.324324</td>
+      <td>14.662162</td>
+      <td>19.684685</td>
+      <td>17.162162</td>
+      <td>...</td>
+      <td>8.648649</td>
+      <td>10.810811</td>
+      <td>33.423423</td>
+      <td>9.684685</td>
+      <td>9.909910</td>
+      <td>4.774775</td>
+      <td>19.279279</td>
+      <td>14.774775</td>
+      <td>19.031532</td>
+      <td>6.238739</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>11.160714</td>
+      <td>10.625000</td>
+      <td>14.285714</td>
+      <td>12.589286</td>
+      <td>15.982143</td>
+      <td>19.910714</td>
+      <td>20.357143</td>
+      <td>16.428571</td>
+      <td>20.267857</td>
+      <td>17.946429</td>
+      <td>...</td>
+      <td>11.875000</td>
+      <td>12.321429</td>
+      <td>14.642857</td>
+      <td>8.839286</td>
+      <td>12.053571</td>
+      <td>8.928571</td>
+      <td>18.750000</td>
+      <td>13.928571</td>
+      <td>24.553571</td>
+      <td>7.500000</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>NaN</td>
+      <td>9.708738</td>
+      <td>13.592233</td>
+      <td>12.621359</td>
+      <td>NaN</td>
+      <td>20.064725</td>
+      <td>33.656958</td>
+      <td>NaN</td>
+      <td>8.414239</td>
+      <td>16.828479</td>
+      <td>...</td>
+      <td>9.385113</td>
+      <td>NaN</td>
+      <td>13.009709</td>
+      <td>8.737864</td>
+      <td>10.355987</td>
+      <td>5.922330</td>
+      <td>18.932039</td>
+      <td>12.103560</td>
+      <td>17.346278</td>
+      <td>6.148867</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>8.690476</td>
+      <td>10.059524</td>
+      <td>11.309524</td>
+      <td>10.178571</td>
+      <td>12.440476</td>
+      <td>14.702381</td>
+      <td>15.297619</td>
+      <td>12.440476</td>
+      <td>15.654762</td>
+      <td>14.047619</td>
+      <td>...</td>
+      <td>7.976190</td>
+      <td>9.702381</td>
+      <td>23.750000</td>
+      <td>6.547619</td>
+      <td>8.571429</td>
+      <td>4.345238</td>
+      <td>13.630952</td>
+      <td>13.869048</td>
+      <td>16.428571</td>
+      <td>6.250000</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>7.195572</td>
+      <td>7.749077</td>
+      <td>9.178967</td>
+      <td>8.625461</td>
+      <td>10.931734</td>
+      <td>13.837638</td>
+      <td>13.745387</td>
+      <td>11.300738</td>
+      <td>13.422509</td>
+      <td>12.084871</td>
+      <td>...</td>
+      <td>6.780443</td>
+      <td>6.457565</td>
+      <td>8.856089</td>
+      <td>6.088561</td>
+      <td>5.258303</td>
+      <td>2.398524</td>
+      <td>11.669742</td>
+      <td>10.009225</td>
+      <td>10.516605</td>
+      <td>4.658672</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>NaN</td>
+      <td>9.074074</td>
+      <td>7.592593</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>12.037037</td>
+      <td>14.629630</td>
+      <td>NaN</td>
+      <td>13.425926</td>
+      <td>8.518519</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>15.740741</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>12.129630</td>
+      <td>10.185185</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>7.032967</td>
+      <td>7.032967</td>
+      <td>5.274725</td>
+      <td>8.351648</td>
+      <td>8.571429</td>
+      <td>10.989011</td>
+      <td>10.989011</td>
+      <td>7.912088</td>
+      <td>9.450549</td>
+      <td>9.010989</td>
+      <td>...</td>
+      <td>5.934066</td>
+      <td>6.153846</td>
+      <td>6.813187</td>
+      <td>4.835165</td>
+      <td>3.956044</td>
+      <td>3.736264</td>
+      <td>8.518681</td>
+      <td>7.797802</td>
+      <td>6.813187</td>
+      <td>5.054945</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>5.720081</td>
+      <td>6.024341</td>
+      <td>7.647059</td>
+      <td>6.977688</td>
+      <td>7.302231</td>
+      <td>9.006085</td>
+      <td>9.269777</td>
+      <td>6.105477</td>
+      <td>7.403651</td>
+      <td>7.728195</td>
+      <td>...</td>
+      <td>4.543611</td>
+      <td>4.523327</td>
+      <td>4.300203</td>
+      <td>4.056795</td>
+      <td>3.651116</td>
+      <td>1.987830</td>
+      <td>6.957404</td>
+      <td>6.206897</td>
+      <td>3.914807</td>
+      <td>5.070994</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>6.216216</td>
+      <td>6.351351</td>
+      <td>7.162162</td>
+      <td>7.297297</td>
+      <td>7.702703</td>
+      <td>9.864865</td>
+      <td>9.729730</td>
+      <td>6.486486</td>
+      <td>7.567568</td>
+      <td>7.702703</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>4.324324</td>
+      <td>4.189189</td>
+      <td>3.783784</td>
+      <td>3.783784</td>
+      <td>2.162162</td>
+      <td>7.027027</td>
+      <td>7.432432</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>23 rows × 85 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name_row</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0        AB2BUK-1
+1         AB2DB-2
+2        AB3ADB-4
+3        AB4BUK-5
+4        AB5DB-14
+         ...     
+80       Borg1997
+81      Camp 2003
+82      Camp 2003
+83    Bacon  1997
+84    Bacon  1997
+Name: 0, Length: 85, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">normalised_df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">name_row</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">attribute_row</span><span class="o">.</span><span class="n">size</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(85, 85, 85)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">normalised_df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">size</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;Elements&quot;</span><span class="p">],</span> <span class="n">normalised_df</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name_row</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;Elements&quot;</span><span class="p">],</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">3</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;OIB&quot;</span><span class="p">)</span> <span class="c1">#OIB</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;sample name: </span><span class="si">{</span><span class="n">name_row</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s2">, sample attribute: </span><span class="si">{</span><span class="n">attribute_row</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mf">1e0</span><span class="p">,</span><span class="mf">1e3</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/44f875c9ce7e0d193b61a24fa13849adc2426d13ca6f29bb4339d126c74effcf.png" src="_images/44f875c9ce7e0d193b61a24fa13849adc2426d13ca6f29bb4339d126c74effcf.png" />
+<img alt="_images/5443a32179d9bb1282fb29a2d57f42107de0816632ad420c5f112865f197a1f9.png" src="_images/5443a32179d9bb1282fb29a2d57f42107de0816632ad420c5f112865f197a1f9.png" />
+<img alt="_images/b49570995fd2ba701327082b32446e0dd46e398a3d002b46dad445653e6b38d8.png" src="_images/b49570995fd2ba701327082b32446e0dd46e398a3d002b46dad445653e6b38d8.png" />
+<img alt="_images/92f57784204d0752fb651cfd99f0660eac6e4348c4ea52f2738dc38492e7e4a4.png" src="_images/92f57784204d0752fb651cfd99f0660eac6e4348c4ea52f2738dc38492e7e4a4.png" />
+<img alt="_images/863fbab4f5d5754550b60c2770c9b038c94e4a47a47fa0db3dd2a7aa3c01178a.png" src="_images/863fbab4f5d5754550b60c2770c9b038c94e4a47a47fa0db3dd2a7aa3c01178a.png" />
+<img alt="_images/5069448ff5b318abb2a323855580f9ac4c5870f7f1cd0b457237e4fbc7ad0d33.png" src="_images/5069448ff5b318abb2a323855580f9ac4c5870f7f1cd0b457237e4fbc7ad0d33.png" />
+<img alt="_images/e5ea9c53c3c2637751288608e3611942934b88aeb5b9badddbe9d8ddaafd2506.png" src="_images/e5ea9c53c3c2637751288608e3611942934b88aeb5b9badddbe9d8ddaafd2506.png" />
+<img alt="_images/4d35e5f4f6ec052e2b8758fb9fe321041145ce04b2d9a86d5a985ae529066c04.png" src="_images/4d35e5f4f6ec052e2b8758fb9fe321041145ce04b2d9a86d5a985ae529066c04.png" />
+<img alt="_images/29bbdc9895636e5a2475bf6792b7251b60eae933095c4dc65e0b4a8c3a91690a.png" src="_images/29bbdc9895636e5a2475bf6792b7251b60eae933095c4dc65e0b4a8c3a91690a.png" />
+<img alt="_images/5e6eafc0a5b6d07320fec5d6a35f5e455743c1ba1a7e8978c7e9c3143b88bc19.png" src="_images/5e6eafc0a5b6d07320fec5d6a35f5e455743c1ba1a7e8978c7e9c3143b88bc19.png" />
+<img alt="_images/a39530e1a133a22e7bc0e37eb7e9e1c4ddabce8143bbf8144892e03e349f4233.png" src="_images/a39530e1a133a22e7bc0e37eb7e9e1c4ddabce8143bbf8144892e03e349f4233.png" />
+<img alt="_images/51a3e8d0b4d6e8e95ac0972c2b3a688d2552e9c16dff6746a5d61efce78597ec.png" src="_images/51a3e8d0b4d6e8e95ac0972c2b3a688d2552e9c16dff6746a5d61efce78597ec.png" />
+<img alt="_images/563606601187210841617b96a7512f102526b2983fe62839e4061586f4e40486.png" src="_images/563606601187210841617b96a7512f102526b2983fe62839e4061586f4e40486.png" />
+<img alt="_images/4d9ad5cadc01e2d49db1f55fbbad11596407d4e080b722786ef13a27c3eba0b9.png" src="_images/4d9ad5cadc01e2d49db1f55fbbad11596407d4e080b722786ef13a27c3eba0b9.png" />
+<img alt="_images/1464f6d6186b54781a7a6453d3f9c9a794cb5f94be6a06435fd8ac5cb54a4894.png" src="_images/1464f6d6186b54781a7a6453d3f9c9a794cb5f94be6a06435fd8ac5cb54a4894.png" />
+<img alt="_images/83e4fd7c904d6c28e0c3126ed05d7320112c92fa314cb09fd8f27f40ae9ace53.png" src="_images/83e4fd7c904d6c28e0c3126ed05d7320112c92fa314cb09fd8f27f40ae9ace53.png" />
+<img alt="_images/32d9cae460ac5a248cbcd44606522c41dc0c88ce039c2db0c0a554713d33cdb2.png" src="_images/32d9cae460ac5a248cbcd44606522c41dc0c88ce039c2db0c0a554713d33cdb2.png" />
+<img alt="_images/abcc9ba71a4cc060078e0a65ece4738f7fab258560be4c53fc7b25ea5a847e68.png" src="_images/abcc9ba71a4cc060078e0a65ece4738f7fab258560be4c53fc7b25ea5a847e68.png" />
+<img alt="_images/8f74e132202fadb5a014f3f7bae01a5d04ab3980c3e1c6795752cc113b2c9acc.png" src="_images/8f74e132202fadb5a014f3f7bae01a5d04ab3980c3e1c6795752cc113b2c9acc.png" />
+<img alt="_images/dafc94843972d09f1036617f24f3f521d933a8f0d7b7354e272254d221a41b3c.png" src="_images/dafc94843972d09f1036617f24f3f521d933a8f0d7b7354e272254d221a41b3c.png" />
+<img alt="_images/8159727634ef95698b7d9a76021fa80e0cb6d6a8a7c2e6eb51e5f16a0e54f2b3.png" src="_images/8159727634ef95698b7d9a76021fa80e0cb6d6a8a7c2e6eb51e5f16a0e54f2b3.png" />
+<img alt="_images/c1347fa6669f0d895e11cc4b4372f40ae1f172d3104b496d5e8a0726185cc042.png" src="_images/c1347fa6669f0d895e11cc4b4372f40ae1f172d3104b496d5e8a0726185cc042.png" />
+<img alt="_images/0c3bf0f04477e8fb1ccc0a4cc7cd1f81577727917ee36977052f675983e6b816.png" src="_images/0c3bf0f04477e8fb1ccc0a4cc7cd1f81577727917ee36977052f675983e6b816.png" />
+<img alt="_images/7b7660fc2c3a8c71920d7432c14316817bfd2339a55bcbae30795a3d4006f5ed.png" src="_images/7b7660fc2c3a8c71920d7432c14316817bfd2339a55bcbae30795a3d4006f5ed.png" />
+<img alt="_images/93b772ecfef9ac952eae5decb6d7eea0490d818437ffc7bc0144f13c7432dcf6.png" src="_images/93b772ecfef9ac952eae5decb6d7eea0490d818437ffc7bc0144f13c7432dcf6.png" />
+<img alt="_images/a0c502f7940d5fdb24a1d0fadd0f6c182a38553e3278d40b8f99cad826073eaa.png" src="_images/a0c502f7940d5fdb24a1d0fadd0f6c182a38553e3278d40b8f99cad826073eaa.png" />
+<img alt="_images/5ffc6fbe8a106b51685d66ae3978c4902451ab93a9977645c4640bbcdebd619b.png" src="_images/5ffc6fbe8a106b51685d66ae3978c4902451ab93a9977645c4640bbcdebd619b.png" />
+<img alt="_images/6fe6be6acdd0bd8b3401c62a2b4be22d88800067f5edd2971665ad1ee9ffd912.png" src="_images/6fe6be6acdd0bd8b3401c62a2b4be22d88800067f5edd2971665ad1ee9ffd912.png" />
+<img alt="_images/63b80127060de8669011f66ba9cfb7c80266455dec8e468a6acf5abfc31b95e6.png" src="_images/63b80127060de8669011f66ba9cfb7c80266455dec8e468a6acf5abfc31b95e6.png" />
+<img alt="_images/78be6d482596fc47ef8b27c57f6e55416b5b4ccbbe67786d07efda7c1931180c.png" src="_images/78be6d482596fc47ef8b27c57f6e55416b5b4ccbbe67786d07efda7c1931180c.png" />
+<img alt="_images/28ce180b3d08111de4a159e44d7c6ead8f34d268af12c4eb9dfb1daf4a7bdb38.png" src="_images/28ce180b3d08111de4a159e44d7c6ead8f34d268af12c4eb9dfb1daf4a7bdb38.png" />
+<img alt="_images/bd53897527ead4da09e63b2681cc4df9923e2eae53bb846353611300372f058b.png" src="_images/bd53897527ead4da09e63b2681cc4df9923e2eae53bb846353611300372f058b.png" />
+<img alt="_images/8a7be58a026551969fd8b9fd3a05a3388ed390c7f7b5c914831b83c1d9c332ae.png" src="_images/8a7be58a026551969fd8b9fd3a05a3388ed390c7f7b5c914831b83c1d9c332ae.png" />
+<img alt="_images/a6a236c1bffc47ec38140082985a67f7fb3638f4f839143a4fbac7772ff01054.png" src="_images/a6a236c1bffc47ec38140082985a67f7fb3638f4f839143a4fbac7772ff01054.png" />
+<img alt="_images/8082560cb76da485b0db5c923e47ae3d4f34883762464d3c3f7b824f11461990.png" src="_images/8082560cb76da485b0db5c923e47ae3d4f34883762464d3c3f7b824f11461990.png" />
+<img alt="_images/dc76494ad99165fe2044ce4ef8123004b17a91a52469c853e8496e4ca3df01c4.png" src="_images/dc76494ad99165fe2044ce4ef8123004b17a91a52469c853e8496e4ca3df01c4.png" />
+<img alt="_images/8ce598b30d1c101e36b536e2904d86660e0c9fd161ecb7901c9827515273a372.png" src="_images/8ce598b30d1c101e36b536e2904d86660e0c9fd161ecb7901c9827515273a372.png" />
+<img alt="_images/df07aef286487b08a176830adb4220669a559da8ca01215056ee56a57bae28e1.png" src="_images/df07aef286487b08a176830adb4220669a559da8ca01215056ee56a57bae28e1.png" />
+<img alt="_images/9034a969cd34293fc80dc2e11072a823a465576f146a90f45adb59a7ba989c30.png" src="_images/9034a969cd34293fc80dc2e11072a823a465576f146a90f45adb59a7ba989c30.png" />
+<img alt="_images/c5eab00dc85af7bd13d915cb0f94d78109bc0bd50d6161c1ca444ac854c146ca.png" src="_images/c5eab00dc85af7bd13d915cb0f94d78109bc0bd50d6161c1ca444ac854c146ca.png" />
+<img alt="_images/31c156aee867cdb884a4c76fcbafe66ca264249e6ffabbf141dae4fa01681986.png" src="_images/31c156aee867cdb884a4c76fcbafe66ca264249e6ffabbf141dae4fa01681986.png" />
+<img alt="_images/4cfa89b1991d9663e784d1742808f90720e9c51019cdd039b648738f18913f7d.png" src="_images/4cfa89b1991d9663e784d1742808f90720e9c51019cdd039b648738f18913f7d.png" />
+<img alt="_images/2f1f0b4ca9577a34eb3d6290d9c117a145f56138950acc83a7a7cf6f0bc17bf4.png" src="_images/2f1f0b4ca9577a34eb3d6290d9c117a145f56138950acc83a7a7cf6f0bc17bf4.png" />
+<img alt="_images/413a7a18b98b9720b33114424c02e0af9a0098a86ee8d4b6049615658c3e102f.png" src="_images/413a7a18b98b9720b33114424c02e0af9a0098a86ee8d4b6049615658c3e102f.png" />
+<img alt="_images/8c2ca5584424b53c185c8c5dc7170d5b15c17a519103e37eac1ddf81129fa2b1.png" src="_images/8c2ca5584424b53c185c8c5dc7170d5b15c17a519103e37eac1ddf81129fa2b1.png" />
+<img alt="_images/8ae467cb586f77e4f8c3a534aaa20aea1f2da3fffcb1ab559c2d086578e09190.png" src="_images/8ae467cb586f77e4f8c3a534aaa20aea1f2da3fffcb1ab559c2d086578e09190.png" />
+<img alt="_images/bad62a6c3567137c5871e3fbe82d144c4d614c73d69c5ea9f2bc32902e73db08.png" src="_images/bad62a6c3567137c5871e3fbe82d144c4d614c73d69c5ea9f2bc32902e73db08.png" />
+<img alt="_images/13527e85bd97ff8653fc4bc0c34c3da47a89af9f464b70dab7cd88d61cd56b65.png" src="_images/13527e85bd97ff8653fc4bc0c34c3da47a89af9f464b70dab7cd88d61cd56b65.png" />
+<img alt="_images/16b586d50fcd769985d8b5a66a9b28d421944ec43a75a4fa87d008f86698d155.png" src="_images/16b586d50fcd769985d8b5a66a9b28d421944ec43a75a4fa87d008f86698d155.png" />
+<img alt="_images/0ebb25a76f8bda75d97e978c9f351ff502f69423c54ccaca13ebd16a88b4e9ac.png" src="_images/0ebb25a76f8bda75d97e978c9f351ff502f69423c54ccaca13ebd16a88b4e9ac.png" />
+<img alt="_images/7730daeca3dd85de7354ed26987ce85a05d3f6e3402e66bf27af133116733206.png" src="_images/7730daeca3dd85de7354ed26987ce85a05d3f6e3402e66bf27af133116733206.png" />
+<img alt="_images/5d42f90d1c79e7aa16cb2763e2aefee6bd9c55e700f55d7aecf2f0476e17eaa3.png" src="_images/5d42f90d1c79e7aa16cb2763e2aefee6bd9c55e700f55d7aecf2f0476e17eaa3.png" />
+<img alt="_images/f966622a259422f337cee5307acf5cbf335918fe6cbe1412de56f4c3f579bbdb.png" src="_images/f966622a259422f337cee5307acf5cbf335918fe6cbe1412de56f4c3f579bbdb.png" />
+<img alt="_images/fe1ecd8dd8008df152b9fff73f59e33082c8430c0eaae61d07e78823914cdb81.png" src="_images/fe1ecd8dd8008df152b9fff73f59e33082c8430c0eaae61d07e78823914cdb81.png" />
+<img alt="_images/7c5256ccaa7012b58d8aa3a6c74d206c7e8d2d1819df9ce7bd84bb652f745b63.png" src="_images/7c5256ccaa7012b58d8aa3a6c74d206c7e8d2d1819df9ce7bd84bb652f745b63.png" />
+<img alt="_images/45f5c549989d3ffb8abf412e9a835956364aeaa2f846338a9118a187b2957882.png" src="_images/45f5c549989d3ffb8abf412e9a835956364aeaa2f846338a9118a187b2957882.png" />
+<img alt="_images/913bdcac1527cd293f00666c3f78aa71fee00cdc6e455bc3606d326a245bb6ad.png" src="_images/913bdcac1527cd293f00666c3f78aa71fee00cdc6e455bc3606d326a245bb6ad.png" />
+<img alt="_images/649071402185473aba290190631daa5e4bcc4f8c6bc5d331ba38c88728a2677f.png" src="_images/649071402185473aba290190631daa5e4bcc4f8c6bc5d331ba38c88728a2677f.png" />
+<img alt="_images/0458dd8e79330b2cf26052c840ff4bfb5302c4427756a8db4807dec62295b143.png" src="_images/0458dd8e79330b2cf26052c840ff4bfb5302c4427756a8db4807dec62295b143.png" />
+<img alt="_images/740257bc6829c921ceb5ade870c1788d53d2721bb4c30e6ea650d4319101d323.png" src="_images/740257bc6829c921ceb5ade870c1788d53d2721bb4c30e6ea650d4319101d323.png" />
+<img alt="_images/85c506413fd90efb4a3ec27fb38ca6f41a4305ae050bea1bd3d1d7b1dbf68190.png" src="_images/85c506413fd90efb4a3ec27fb38ca6f41a4305ae050bea1bd3d1d7b1dbf68190.png" />
+<img alt="_images/bae715eb3edf39838383c0d7eadc4fa0a2b736193a83a3954fee8a5e7e2327ad.png" src="_images/bae715eb3edf39838383c0d7eadc4fa0a2b736193a83a3954fee8a5e7e2327ad.png" />
+<img alt="_images/c1aacf567a5ab398d43356c356d07b7cec8f5d43a10cb5374c65c4dbfad44b1c.png" src="_images/c1aacf567a5ab398d43356c356d07b7cec8f5d43a10cb5374c65c4dbfad44b1c.png" />
+<img alt="_images/0a79a153953b3d3804057f27a1ed4d4f15250d6acb3b6747d9ed9880f875cf73.png" src="_images/0a79a153953b3d3804057f27a1ed4d4f15250d6acb3b6747d9ed9880f875cf73.png" />
+<img alt="_images/666d8a9c0206c4c6bc7f202edf2daccc2ff166722813fb870fb7bc06976b45fc.png" src="_images/666d8a9c0206c4c6bc7f202edf2daccc2ff166722813fb870fb7bc06976b45fc.png" />
+<img alt="_images/50abfccc1d62151b46036a5f7c8562493781acafeea040466ed17c74c65d6067.png" src="_images/50abfccc1d62151b46036a5f7c8562493781acafeea040466ed17c74c65d6067.png" />
+<img alt="_images/71e76324c96fa4f48cb767754dacf936d95a4b93f295b1c572d43d9ac24d2463.png" src="_images/71e76324c96fa4f48cb767754dacf936d95a4b93f295b1c572d43d9ac24d2463.png" />
+<img alt="_images/3351ab3e62f896076a6593b9a870efef4ee87af09d556a688e0498f5db8ed600.png" src="_images/3351ab3e62f896076a6593b9a870efef4ee87af09d556a688e0498f5db8ed600.png" />
+<img alt="_images/9da15d33a7dd81ff55a64815995a127c61fccdfabb080a83fc391ffc052c024b.png" src="_images/9da15d33a7dd81ff55a64815995a127c61fccdfabb080a83fc391ffc052c024b.png" />
+<img alt="_images/adb18ddc302661fd48001c9e4f51ea9ce2498a753c9e7b3097e1b5e0ad3aad7a.png" src="_images/adb18ddc302661fd48001c9e4f51ea9ce2498a753c9e7b3097e1b5e0ad3aad7a.png" />
+<img alt="_images/7e131f814b316dc8d2a544f722342797215846d272fa083c625340dca4f8df1a.png" src="_images/7e131f814b316dc8d2a544f722342797215846d272fa083c625340dca4f8df1a.png" />
+<img alt="_images/5229ce73931569dfd929c6a2f52a78ece53a7a403ac2f5a123c93c449847ec85.png" src="_images/5229ce73931569dfd929c6a2f52a78ece53a7a403ac2f5a123c93c449847ec85.png" />
+<img alt="_images/dd7f04f923699c2972fc44f0e6001b3d0b7bf06e8401f16cf3c02b43e6651166.png" src="_images/dd7f04f923699c2972fc44f0e6001b3d0b7bf06e8401f16cf3c02b43e6651166.png" />
+<img alt="_images/fba108e490f8a4392b382b1b4fe17bef874c34adcbea7e071e5f5bdc6852c63a.png" src="_images/fba108e490f8a4392b382b1b4fe17bef874c34adcbea7e071e5f5bdc6852c63a.png" />
+<img alt="_images/9882749e718039aa988d5a31c41db3bad1ede6f81f768d2d35efd382101eefbe.png" src="_images/9882749e718039aa988d5a31c41db3bad1ede6f81f768d2d35efd382101eefbe.png" />
+<img alt="_images/f97e29fc36509ec27ff4d2045c515a55ec2b01f84e786a1a405fc458aae27afb.png" src="_images/f97e29fc36509ec27ff4d2045c515a55ec2b01f84e786a1a405fc458aae27afb.png" />
+<img alt="_images/46252b39eafe052effa75617c8e9781d24fe39b691f96c99e54f36449c4c2146.png" src="_images/46252b39eafe052effa75617c8e9781d24fe39b691f96c99e54f36449c4c2146.png" />
+<img alt="_images/7db549f78978039f452898e87b4636f7849379bad3f5edeab6fbe52a79befc49.png" src="_images/7db549f78978039f452898e87b4636f7849379bad3f5edeab6fbe52a79befc49.png" />
+<img alt="_images/24c6459712890c663959bcd70bc6fbefdeaaa5d7ddbebd47a04c4eeb30346e77.png" src="_images/24c6459712890c663959bcd70bc6fbefdeaaa5d7ddbebd47a04c4eeb30346e77.png" />
+<img alt="_images/f6b1f435bd25f910306a80a0962fb341556dc8c3b00b31b7c5e2187069a58fc3.png" src="_images/f6b1f435bd25f910306a80a0962fb341556dc8c3b00b31b7c5e2187069a58fc3.png" />
+<img alt="_images/0c2c54324f0ddd19188bbc78b6c7616cb96633fde8907e83f932414a5d1b9ae4.png" src="_images/0c2c54324f0ddd19188bbc78b6c7616cb96633fde8907e83f932414a5d1b9ae4.png" />
+<img alt="_images/5c8fe9cf038bb01a3fe6feb664b98e11ff35253e7e317fac4e51e4a93e3f599b.png" src="_images/5c8fe9cf038bb01a3fe6feb664b98e11ff35253e7e317fac4e51e4a93e3f599b.png" />
+<img alt="_images/f5ff6356aa58f8ee8f013964a99f2dc86fec3ecfabbca4d0f8d93c5a902af3ce.png" src="_images/f5ff6356aa58f8ee8f013964a99f2dc86fec3ecfabbca4d0f8d93c5a902af3ce.png" />
+<img alt="_images/4aaa0a28ae0bdad5bd722e58623fcd24ed9b31d729e07e77a319016990866749.png" src="_images/4aaa0a28ae0bdad5bd722e58623fcd24ed9b31d729e07e77a319016990866749.png" />
+<img alt="_images/bbeb9cb482c53c0ffb208b31b6abed3aec41cbeacfafbd6ae2bae5debad36c45.png" src="_images/bbeb9cb482c53c0ffb208b31b6abed3aec41cbeacfafbd6ae2bae5debad36c45.png" />
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="plots.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Plots</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Develida%C4%9F.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Develidağ</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Taha Altar Çağ
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
